@@ -18,7 +18,7 @@
 #include <stack>
 #include <cstdio>
 
-using namespace std;
+// using namespace std;
 
 namespace depth_first_search_exercise {
 

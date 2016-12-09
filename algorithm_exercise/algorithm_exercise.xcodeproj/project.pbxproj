@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A2DD2EB1DF8D8150083BAB4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2DD2EA1DF8D8150083BAB4 /* main.cpp */; };
-		5A2DD2F21DF8D8AE0083BAB4 /* depth_first_serach.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2DD2F11DF8D8AE0083BAB4 /* depth_first_serach.cpp */; };
+		5A2DD2F21DF8D8AE0083BAB4 /* depth_first_search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2DD2F11DF8D8AE0083BAB4 /* depth_first_search.cpp */; };
 		5A2DD2F51DF8D8E90083BAB4 /* depth_first_search_exercise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2DD2F31DF8D8E90083BAB4 /* depth_first_search_exercise.cpp */; };
+		5A2DD2F71DF8DC9B0083BAB4 /* lottery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2DD2F61DF8DC9B0083BAB4 /* lottery.cpp */; };
+		5A2DD2FC1DFAA7470083BAB4 /* greedy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2DD2FB1DFAA7470083BAB4 /* greedy.cpp */; };
+		5A2DD2FE1DFAACFA0083BAB4 /* greedy_scheduling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A2DD2FD1DFAACFA0083BAB4 /* greedy_scheduling.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,9 +28,11 @@
 
 /* Begin PBXFileReference section */
 		5A2DD2E71DF8D8150083BAB4 /* algorithm_exercise */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = algorithm_exercise; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A2DD2EA1DF8D8150083BAB4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		5A2DD2F11DF8D8AE0083BAB4 /* depth_first_serach.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = depth_first_serach.cpp; sourceTree = "<group>"; };
+		5A2DD2F11DF8D8AE0083BAB4 /* depth_first_search.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = depth_first_search.cpp; sourceTree = "<group>"; };
 		5A2DD2F31DF8D8E90083BAB4 /* depth_first_search_exercise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = depth_first_search_exercise.cpp; sourceTree = "<group>"; };
+		5A2DD2F61DF8DC9B0083BAB4 /* lottery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lottery.cpp; sourceTree = "<group>"; };
+		5A2DD2FB1DFAA7470083BAB4 /* greedy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = greedy.cpp; sourceTree = "<group>"; };
+		5A2DD2FD1DFAACFA0083BAB4 /* greedy_scheduling.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = greedy_scheduling.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +65,11 @@
 		5A2DD2E91DF8D8150083BAB4 /* algorithm_exercise */ = {
 			isa = PBXGroup;
 			children = (
-				5A2DD2EA1DF8D8150083BAB4 /* main.cpp */,
-				5A2DD2F11DF8D8AE0083BAB4 /* depth_first_serach.cpp */,
+				5A2DD2F11DF8D8AE0083BAB4 /* depth_first_search.cpp */,
 				5A2DD2F31DF8D8E90083BAB4 /* depth_first_search_exercise.cpp */,
+				5A2DD2F61DF8DC9B0083BAB4 /* lottery.cpp */,
+				5A2DD2FB1DFAA7470083BAB4 /* greedy.cpp */,
+				5A2DD2FD1DFAACFA0083BAB4 /* greedy_scheduling.cpp */,
 			);
 			path = algorithm_exercise;
 			sourceTree = "<group>";
@@ -126,8 +132,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A2DD2F51DF8D8E90083BAB4 /* depth_first_search_exercise.cpp in Sources */,
-				5A2DD2F21DF8D8AE0083BAB4 /* depth_first_serach.cpp in Sources */,
-				5A2DD2EB1DF8D8150083BAB4 /* main.cpp in Sources */,
+				5A2DD2F21DF8D8AE0083BAB4 /* depth_first_search.cpp in Sources */,
+				5A2DD2F71DF8DC9B0083BAB4 /* lottery.cpp in Sources */,
+				5A2DD2FC1DFAA7470083BAB4 /* greedy.cpp in Sources */,
+				5A2DD2FE1DFAACFA0083BAB4 /* greedy_scheduling.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

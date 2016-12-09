@@ -17,7 +17,7 @@
 #include <stack>
 #include <cstdio>
 
-using namespace std;
+// using namespace std;
 
 namespace depth_first_search {
 
@@ -27,12 +27,13 @@ namespace depth_first_search {
 
     bool dfs(int i, int sum){
         printf("i=%d sum=%d\n", i, sum);
+        // n個決め終わったら、今までの和sumがkと等しいかを返す
         if (i == n) return sum == k;
-
+        // a[i]を使わない場合
         if (dfs(i + 1, sum)) return true;
-
+        // a[i]を使う場合
         if (dfs(i + 1, sum + a[i])) return true;
-
+        // a[i]を使う使わないに拘わらずkが作れないのでfalseを返す
         return false;
     }
 
@@ -45,5 +46,10 @@ namespace depth_first_search {
         solve();
         return 0;
     }
-    
 }
+
+//
+//int main() {
+//    depth_first_search::main();
+//    return 0;
+//}
