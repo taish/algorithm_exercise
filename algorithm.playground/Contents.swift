@@ -1,5 +1,21 @@
 //: Playground - noun: a place where people can play
 import UIKit
+
+// timer
+func evaluateProblem<T>(problemNumber: Int, problemBlock: () -> T) -> T {
+    print("Evaluating problem \(problemNumber)")
+
+    let start = DispatchTime.now() // <<<<<<<<<< Start time
+    let myGuess = problemBlock()
+    let end = DispatchTime.now()   // <<<<<<<<<<   end time
+
+    let nanoTime = end.uptimeNanoseconds - start.uptimeNanoseconds // <<<<< Difference in nano seconds (UInt64)
+    let timeInterval = Double(nanoTime) / 1_000_000_000 // Technically could overflow for long running tests
+
+    print("Time to evaluate problem \(problemNumber): \(timeInterval) seconds")
+    return myGuess
+}
+
 //DP
 // ナップサック問題
 class Knapsack {
@@ -33,12 +49,10 @@ class Knapsack {
     }
 
     func solve() {
-        print("fire")
         print(self.rec(i: 0, j: W, sum: 0))
     }
 
     var memo =  [Int : [Int : Int]]()
-
 
     // i番目以降の重さの総和がj以下の最大価値
     func rec(i: Int, j: Int) -> Int {
@@ -89,5 +103,63 @@ class Knapsack {
     }
 }
 
-Knapsack.init().solve()
 
+class Heap {
+    var heap = Array<Int>()
+
+    func push(x: Int) {
+        var index = heap.count
+        print(index)
+        while(index > 0) {
+            let parentIndex = (index - 1) / 2
+            if heap[parentIndex] <= x { break }
+            // switch parent node
+            if heap.indices ~= index {
+//                let tmp = heap[index]
+                heap[index] = heap[parentIndex]
+//                heap[parentIndex] = tmp
+            } else {
+                heap.append(heap[parentIndex])
+//                heap[parentIndex] = x
+            }
+            index = parentIndex
+        }
+        heap[index] = x
+    }
+
+    func pop() -> Int {
+        let ret = heap.removeFirst()
+        let topNode = heap[heap.count-1]
+        heap.insert(topNode, at: 0)
+        heap.removeLast()
+        var index = 0
+        while (index * 2 + 1 < heap.count) {
+            let left = index * 2 + 1
+            let right = index * 2 + 2
+            let minIndex: Int
+            if (right < heap.count && heap[right] < heap[left]) {
+                minIndex = right
+            } else {
+                minIndex = left
+            }
+            if (heap[minIndex] >= topNode) { break }
+            // change
+            let tmp = heap[index]
+            heap[index] = heap[minIndex]
+            heap[minIndex] = tmp
+            index = minIndex
+        }
+        return ret
+    }
+
+    init() {
+        heap = [1,2,4,7,8,5]
+    }
+
+    func solve() {
+//        self.push(x: 3)
+        print(self.pop())
+        print(heap)
+        print(heap == [2,5,4,7,8])
+    }
+}
