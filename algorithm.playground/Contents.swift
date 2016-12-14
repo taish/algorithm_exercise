@@ -163,3 +163,67 @@ class Heap {
         print(heap == [2,5,4,7,8])
     }
 }
+
+class BinaryNode<T: Comparable> {
+    var value: T
+    var parent: BinaryNode?
+    var left: BinaryNode?
+    var right: BinaryNode?
+
+    init(value: T) {
+        self.value = value
+    }
+
+    func insert(value: T) {
+        if self.value < value {
+            if let left = self.left {
+                left.insert(value: value)
+            } else {
+                self.left = BinaryNode.init(value: value)
+            }
+        } else {
+            if let right = self.right {
+                right.insert(value: value)
+            } else {
+                self.right = BinaryNode.init(value: value)
+            }
+        }
+
+    }
+
+    func search(value: T) -> BinaryNode? {
+        if self.value == value {
+            print("hit \(self.value)", terminator: "")
+            return self
+        } else if self.value < value {
+            guard let left = self.left else {
+                print("not found")
+                return nil
+            }
+            print("\(self.value) --> ", terminator: "")
+            return left.search(value: value)
+        } else {
+            guard let right = self.right else {
+                print("not found")
+                return nil
+            }
+            print("\(self.value) --> ", terminator: "")
+            return right.search(value: value)
+        }
+    }
+}
+
+
+ let node = BinaryNode.init(value: 7)
+ node.insert(value: 2)
+ node.insert(value: 15)
+ node.insert(value: 1)
+ node.insert(value: 5)
+ node.insert(value: 10)
+ node.insert(value: 17)
+ node.insert(value: 8)
+ node.insert(value: 11)
+ node.insert(value: 16)
+ node.insert(value: 19)
+
+ node.search(value: 11)
